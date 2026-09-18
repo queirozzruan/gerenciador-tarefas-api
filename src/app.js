@@ -1,4 +1,6 @@
 const express = require('express');
+const swaggerUi = require('swagger-ui-express');
+const swaggerFile = require('../swagger-output.json');
 
 const UsuarioRepository = require('./infrastructure/repositories/UsuarioRepository');
 const TarefaRepository = require('./infrastructure/repositories/TarefaRepository');
@@ -52,6 +54,8 @@ const tarefaController = new TarefaController({
 const app = express();
 
 app.use(express.json());
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.use(
   criarRotas({

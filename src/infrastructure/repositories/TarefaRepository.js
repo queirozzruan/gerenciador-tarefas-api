@@ -5,6 +5,7 @@ class TarefaRepository {
   async criar(tarefa) {
     return TarefaModel.create({
       titulo: tarefa.titulo,
+      descricao: tarefa.descricao,
       status: tarefa.status,
       usuarioId: tarefa.usuarioId
     });
@@ -54,6 +55,7 @@ class TarefaRepository {
   async salvar(tarefa) {
     return this.atualizar(tarefa.id, {
       titulo: tarefa.titulo,
+      descricao: tarefa.descricao,
       status: tarefa.status,
       usuarioId: tarefa.usuarioId
     });

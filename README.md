@@ -35,6 +35,18 @@ Para executar normalmente:
 npm start
 ```
 
+Para gerar a documentação manualmente:
+
+```bash
+npm run swagger
+```
+
+A interface interativa do Swagger fica disponível em:
+
+```text
+http://localhost:3000/api-docs
+```
+
 ## 4. Executar os testes
 
 ```bash

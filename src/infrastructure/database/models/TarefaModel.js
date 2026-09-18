@@ -17,6 +17,10 @@ const TarefaModel = sequelize.define(
         notEmpty: true
       }
     },
+    descricao: {
+      type: DataTypes.STRING(500),
+      allowNull: true
+    },
     status: {
       type: DataTypes.STRING,
       allowNull: false,

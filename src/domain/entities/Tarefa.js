@@ -5,7 +5,13 @@ class Tarefa {
     CONCLUIDA: 'CONCLUIDA'
   };
 
-  constructor({ id = null, titulo, usuarioId, status = Tarefa.STATUS.PENDENTE }) {
+  constructor({
+    id = null,
+    titulo,
+    descricao = null,
+    usuarioId,
+    status = Tarefa.STATUS.PENDENTE
+  }) {
     if (!titulo || !titulo.trim()) {
       throw new Error('O título da tarefa é obrigatório.');
     }
@@ -20,6 +26,7 @@ class Tarefa {
 
     this.id = id;
     this.titulo = titulo.trim();
+    this.descricao = descricao ? descricao.trim() : null;
     this.usuarioId = usuarioId;
     this.status = status;
   }

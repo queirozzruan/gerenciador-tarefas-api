@@ -6,7 +6,7 @@ class CriarTarefaService {
     this.usuarioRepository = usuarioRepository;
   }
 
-  async executar({ titulo, usuarioId }) {
+  async executar({ titulo, descricao, usuarioId }) {
     const usuario = await this.usuarioRepository.buscarPorId(usuarioId);
 
     if (!usuario) {
@@ -17,6 +17,7 @@ class CriarTarefaService {
 
     const tarefa = new Tarefa({
       titulo,
+      descricao,
       usuarioId
     });
 

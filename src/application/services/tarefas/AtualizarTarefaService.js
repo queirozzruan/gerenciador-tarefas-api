@@ -17,6 +17,7 @@ class AtualizarTarefaService {
     const tarefa = new Tarefa({
       id: tarefaEncontrada.id,
       titulo: titulo ?? tarefaEncontrada.titulo,
+      descricao: tarefaEncontrada.descricao,
       usuarioId: tarefaEncontrada.usuarioId,
       status: tarefaEncontrada.status
     });
